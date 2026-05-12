@@ -1,0 +1,109 @@
+.success-page {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+.success-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  text-align: center;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.1);
+  border: 2px solid #25d366;
+  color: #25d366;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.success-title {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.success-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.success-summary {
+  background: var(--surface-2);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.success-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border);
+}
+.success-row:last-child { border-bottom: none; }
+
+.success-row span:first-child { color: var(--text-muted); }
+.success-row span:last-child { color: var(--text-primary); font-weight: 500; }
+
+.success-note {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.success-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.success-btn-home {
+  padding: 11px 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.success-btn-home:hover { background: var(--surface-2); }
+
+.success-btn-more {
+  padding: 11px 24px;
+  border-radius: var(--radius-md);
+  background: var(--text-primary);
+  color: var(--surface);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.success-btn-more:hover { opacity: 0.88; }
+
+.success-empty {
+  padding: 60px 24px;
+  text-align: center;
+  color: var(--text-secondary);
+}

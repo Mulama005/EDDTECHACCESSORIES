@@ -1,0 +1,37 @@
+.admin-navbar {
+  display: flex;
+  gap: 20px;
+  background: #111827;
+  padding: 14px 20px;
+}
+
+.admin-navbar a {
+  color: #d1d5db;
+  text-decoration: none;
+  position: relative;
+  font-size: 14px;
+}
+
+.admin-navbar a.active {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* BADGE */
+.nav-with-badge {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -12px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 7px;
+  border-radius: 999px;
+  min-width: 18px;
+  text-align: center;
+}

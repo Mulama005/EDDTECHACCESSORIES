@@ -1,0 +1,249 @@
+/* PAGE */
+.contact-page {
+  background: #f9fafb;
+  padding: 60px 8%;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+/* HEADER */
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* MAIN LAYOUT */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr 70px;
+  gap: 30px;
+  align-items: stretch;
+}
+.contact-form select {
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f9fafb;
+  color: #111827;
+  font-size: 14px;
+  appearance: none; /* removes weird browser styles */
+}
+
+/* FORM CARD */
+.contact-form {
+  background: #f6f1f1;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* INPUTS */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  background: #d8d6d6;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: #000;
+  background: #858282;
+}
+
+/* BUTTON */
+.contact-btn-send {
+  background: #111827;
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contact-btn-send:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+.call-btn {
+  display: inline-block;
+  background: #111827;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.call-btn:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+
+/* MAP CARD */
+.contact-map {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+  border: none;
+}
+
+/* SOCIALS*/
+.contact-socials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.contact-socials a {
+  width: 45px;
+  height: 45px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  text-decoration: none;
+  color: #111827;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.contact-socials a:hover {
+  transform: translateY(-4px);
+  background: #111827;
+  color: #fff;
+}
+
+/* SUCCESS MESSAGE */
+.success-msg {
+  background: #ecfdf5;
+  color: #065f46;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-socials {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+/* TABLETS */
+@media (max-width: 992px) {
+  .contact-page {
+    padding: 40px 5%;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .contact-map iframe {
+    min-height: 350px;
+  }
+
+  .contact-socials {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
+/* MOBILE PHONES */
+@media (max-width: 600px) {
+  .contact-page {
+    padding: 30px 20px;
+  }
+
+  .contact-header h2 {
+    font-size: 26px;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .contact-btn-send {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .call-btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .contact-map iframe {
+    min-height: 280px;
+  }
+
+  .contact-socials {
+    gap: 12px;
+  }
+
+  .contact-socials a {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}

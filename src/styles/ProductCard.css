@@ -1,0 +1,109 @@
+.pcard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.pcard:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-accent);
+}
+
+.pcard__img-wrap {
+  position: relative;
+  background: var(--surface-2);
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.pcard__tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.pcard__tag--new  { background: rgba(79,195,247,0.15); color: var(--accent); border: 1px solid rgba(79,195,247,0.3); }
+.pcard__tag--sale { background: rgba(244,67,54,0.15); color: #ef5350; border: 1px solid rgba(244,67,54,0.3); }
+.pcard__tag--hot  { background: rgba(255,152,0,0.15); color: #ffa726; border: 1px solid rgba(255,152,0,0.3); }
+
+/* Placeholder phone illustration */
+.pcard__img-ph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.pcard__ph-screen {
+  width: 52px;
+  height: 90px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255,255,255,0.12);
+  background: linear-gradient(160deg, var(--surface-3), var(--brand-dark));
+}
+.pcard__ph-btn {
+  width: 16px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.1);
+}
+
+.pcard__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  
+}
+
+.pcard__body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.pcard__name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.pcard__price {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.pcard__btn {
+  width: 100%;
+  padding: 9px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  transition: var(--transition);
+  margin-top: auto;
+}
+.pcard__btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--brand-dark);
+}

@@ -1,0 +1,138 @@
+.broadcast-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  max-width: 700px;
+}
+
+.broadcast-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.broadcast-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* SECTION */
+.broadcast-section {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+.broadcast-section__title {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  letter-spacing: 0.8px;
+}
+
+/* FIELD */
+.broadcast-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.broadcast-field label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.broadcast-field input,
+.broadcast-field textarea,
+.broadcast-field select {
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: var(--font-body);
+  transition: var(--transition);
+}
+
+.broadcast-field textarea {
+  height: 90px;
+  resize: none;
+}
+
+.broadcast-field input:focus,
+.broadcast-field textarea:focus,
+.broadcast-field select:focus {
+  outline: none;
+  border-color: var(--text-primary);
+  background: var(--surface-3);
+}
+
+/* IMAGE PREVIEW */
+.broadcast-preview {
+  margin-top: 10px;
+}
+
+.broadcast-preview img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+/* BUTTON */
+.broadcast-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  background: var(--text-primary);
+  color: var(--surface);
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.broadcast-btn:hover {
+  opacity: 0.9;
+}
+
+.broadcast-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* MESSAGE */
+.broadcast-message {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+.image-preview {
+  margin-top: 10px;
+}
+
+.image-preview img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+.broadcast-message--success {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.broadcast-message--error {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}

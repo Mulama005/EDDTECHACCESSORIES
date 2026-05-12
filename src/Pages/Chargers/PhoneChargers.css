@@ -1,0 +1,47 @@
+.phone-chargers-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.phone-chargers-page__header {
+  margin-bottom: 40px;
+}
+
+.phone-chargers-page__eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+}
+
+.phone-chargers-page__title {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+  margin: 8px 0 12px;
+}
+
+.phone-chargers-page__subtitle {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 480px;
+}
+
+.phone-chargers-page__inner {
+  width: 100%;
+}
+
+.phone-chargers-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .phone-chargers-page { padding: 32px 16px; }
+  .phone-chargers-page__grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+}

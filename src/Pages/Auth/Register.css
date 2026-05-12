@@ -1,0 +1,124 @@
+/* PAGE */
+.register-page {
+  background: #f9fafb;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 8%;
+  font-family: "Inter", sans-serif;
+}
+
+/* CARD */
+.register-card {
+  width: 100%;
+  max-width: 420px;
+  background: #f6f1f1;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* TITLE */
+.register-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* FORM */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* INPUTS */
+.register-form input {
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #d8d6d6;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.register-form input:focus {
+  border-color: #000;
+  background: #858282;
+}
+
+/* CHECKBOX */
+.register-checkbox {
+  font-size: 13px;
+  color: #374151;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.register-checkbox input {
+  margin-top: 4px;
+  accent-color: #111827;
+  cursor: pointer;
+}
+
+.register-checkbox a {
+  color: #111827;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.register-checkbox a:hover {
+  text-decoration: underline;
+}
+
+/* BUTTON */
+.register-btn {
+  background: #111827;
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+
+/* FOOTER */
+.register-footer {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.register-footer span {
+  color: #111827;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.register-footer span:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .register-card {
+    padding: 20px;
+  }
+
+  .register-card h2 {
+    font-size: 22px;
+  }
+}
