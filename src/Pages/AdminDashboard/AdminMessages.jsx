@@ -14,7 +14,7 @@ export default function AdminMessages() {
   // FETCH MESSAGES
   const fetchMessages = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin/messages", {
+      const res = await fetch("https://eddtechaccessories-backend.vercel.app/api/admin/messages", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -36,7 +36,7 @@ export default function AdminMessages() {
   //  MARK AS READ (FIXED)
   const markAsRead = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/admin/messages/${id}/read`, {
+      await fetch(`https://eddtechaccessories-backend.vercel.app/api/admin/messages/${id}/read`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,

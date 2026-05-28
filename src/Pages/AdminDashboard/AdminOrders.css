@@ -444,7 +444,7 @@
   }
 
   .admin-sidebar {
-    display: none;
+    display: flex;
   }
 
   .admin-main {
@@ -612,4 +612,129 @@
 .admin-nav-item--sub {
   padding-left: 28px;
   font-size: 12px;
+}
+/* ================================
+   MOBILE HAMBURGER + SIDEBAR
+================================ */
+
+/* Hamburger button */
+.admin-mobile-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #111827;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 1200;
+}
+
+.admin-mobile-toggle:hover {
+  background: #f3f4f6;
+}
+
+/* Overlay */
+.admin-sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+}
+
+/* Active overlay */
+.admin-sidebar-overlay--show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile sidebar behavior */
+@media (max-width: 900px) {
+
+  /* show hamburger */
+  .admin-mobile-toggle {
+    display: inline-flex;
+  }
+
+  /* mobile sidebar */
+  .admin-sidebar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 240px;
+    height: 100vh;
+    z-index: 1100;
+    transition: left 0.28s ease;
+    box-shadow: 8px 0 30px rgba(0, 0, 0, 0.18);
+  }
+
+  /* active sidebar */
+  .admin-sidebar--open {
+    left: 0;
+  }
+
+  /* prevent body scroll */
+  body.admin-menu-open {
+    overflow: hidden;
+  }
+
+  /* topbar adjustments */
+  .admin-topbar {
+    align-items: center;
+  }
+
+  .admin-topbar__left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+}
+/* topbar heading + hamburger */
+.admin-topbar__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+
+/* hide hamburger on desktop */
+.admin-mobile-toggle {
+  display: none;
+}
+
+/* mobile */
+@media (max-width: 900px) {
+
+  .admin-mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fff;
+    font-size: 22px;
+    color: #111827;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .admin-mobile-toggle:hover {
+    background: #f3f4f6;
+  }
+
+  .admin-topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }

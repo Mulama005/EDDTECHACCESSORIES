@@ -11,7 +11,7 @@ export default function SubscribeButton() {
 
   useEffect(() => {
     if (!token) return;
-    fetch('http://localhost:5000/api/subscription/status', {
+    fetch('https://eddtechaccessories-backend.vercel.app/api/subscription/status', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(r => r.json())
@@ -28,8 +28,8 @@ export default function SubscribeButton() {
     setMessage('');
 
     const url = subscribed
-      ? 'http://localhost:5000/api/unsubscribe'
-      : 'http://localhost:5000/api/subscribe';
+      ? 'https://eddtechaccessories-backend.vercel.app/api/unsubscribe'
+      : 'https://eddtechaccessories-backend.vercel.app/api/subscribe';
 
     try {
       const res  = await fetch(url, {

@@ -10,7 +10,7 @@ export function useCampaigns() {
     const token = localStorage.getItem("token");
 
     try {
-      const res  = await fetch("http://localhost:5000/api/admin/campaigns", {
+      const res  = await fetch("https://eddtechaccessories-backend.vercel.app/api/admin/campaigns", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -26,7 +26,7 @@ export function useCampaigns() {
   const deleteCampaign = async (id) => {
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/campaigns/${id}`, {
+      const res = await fetch(`https://eddtechaccessories-backend.vercel.app/api/admin/campaigns/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

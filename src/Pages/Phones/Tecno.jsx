@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom';
 import ProductCard from '../../components/ProductCard';
-import  tecnoProducts  from '../../data/tecnoProducts';
+import tecnoProducts from '../../data/tecnoProducts';
 import './tecno.css';
 
 export default function Tecno() {
@@ -8,18 +7,25 @@ export default function Tecno() {
     <div className="tecno-page">
       <div className="tecno-page__header">
         <span className="tecno-page__eyebrow">Tecno Collection</span>
+
         <h1 className="tecno-page__title">Tecno Phones</h1>
+
         <p className="tecno-page__subtitle">
           The full lineup from the latest to the best value models.
         </p>
       </div>
+
       <div className="tecno-page__inner">
         <div className="tecno-page__grid">
+
           {tecnoProducts.map(product => (
-            <Link to={`/tecno/${product.id}`} key={product.id} style={{ textDecoration: 'none' }}>
-              <ProductCard product={product} />
-            </Link>
+            <ProductCard
+              key={product.id}
+              product={product}
+              basePath="/tecno"
+            />
           ))}
+
         </div>
       </div>
     </div>

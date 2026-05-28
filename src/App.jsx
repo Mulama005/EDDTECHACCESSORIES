@@ -28,6 +28,8 @@ import PhoneChargers from './Pages/Chargers/PhoneChargers';
 import PhoneChargerDetail from './Pages/Chargers/PhoneChargersDetail';
 import PowerBank from './Pages/Chargers/PowerBank';
 import PowerBankDetail from './Pages/Chargers/PowerBankDetail';
+import Speakers from "./pages/audio/Speakers";
+import SpeakersDetail from "./pages/audio/SpeakersDetail";
 import Order from './Pages/Order';
 import OrderSuccess from './Pages/OrderSuccess';
 import ContactUs from './Pages/ContactUs/ContactUs';
@@ -35,6 +37,8 @@ import AdminOrders from "./pages/AdminDashboard/AdminOrders";
 import AdminCampaigns from "./pages/AdminDashboard/AdminCampaigns";
 import AdminMessages from "./pages/AdminDashboard/AdminMessages";
 import SearchResults from "./components/SearchResults";
+import About from './components/About';
+import Services from './components/Services';
 import Login from './Pages/Auth/Login';
 import Register from './Pages/Auth/Register';
 import AdminRoute from "./components/AdminRoute";
@@ -116,12 +120,19 @@ export default function App() {
             <Route path="/phone-chargers/:id" element={<PhoneChargerDetail />} />
             <Route path="/powerbank" element={<PowerBank />} />
             <Route path="/powerbank/:id" element={<PowerBankDetail />} />
+            {/* audio */}
+            <Route path="/speakers" element={<Speakers />} />
+            <Route path="/speakers/:id" element={<SpeakersDetail />} />
 
             {/* Order */}
             <Route path="/order" element={<Order />} />
             <Route path="/order-success" element={<OrderSuccess />} />
             {/* Contact Us */}
             <Route path="/contact" element={<ContactUs />} />
+            {/* About Us */}
+            <Route path="/about" element={<About />} />
+              {/* Services */}
+            <Route path="/services" element={<Services />} />
             
 
           </Routes>

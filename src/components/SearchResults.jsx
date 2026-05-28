@@ -15,7 +15,7 @@ export default function SearchResults() {
   const fetchResults = async () => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/products/search?q=${query}`
+        `https://eddtechaccessories-backend.vercel.app/api/products/search?q=${query}`
       );
 
       const data = await res.json();

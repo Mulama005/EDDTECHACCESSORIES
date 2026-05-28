@@ -21,7 +21,7 @@ export default function AdminNavbar() {
 
   const fetchUnread = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin/messages", {
+      const res = await fetch("https://eddtechaccessories-backend.vercel.app/api/admin/messages", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

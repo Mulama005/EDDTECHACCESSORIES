@@ -34,7 +34,7 @@ export default function Order() {
   setLoading(true);
 
   try {
-    const res = await fetch("http://localhost:5000/api/order", {
+    const res = await fetch("https://eddtechaccessories-backend.vercel.app/api/order", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
