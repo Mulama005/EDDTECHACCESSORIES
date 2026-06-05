@@ -10,15 +10,21 @@ import speakersProducts from '../data/speakersProducts';
 import laptopchargersProducts from '../data/laptopchargersProducts';
 import laptopProducts from '../data/laptopProducts';
 
-import phonechargersProducts from '../data/phonechargersProducts';
-import powerbankProducts from '../data/powerbankProducts';
+import phonechargersProducts from '../data/phonechargersProducts.json';
+import powerbankProducts from '../data/powerbankProducts.json';
 
-import tabletProducts from '../data/tabletProducts';
+import tabletProducts from '../data/tabletProducts.json';
 
-import infinixProducts from '../data/infinixProducts';
+import infinixProducts from '../data/infinixProducts.json';
 import iphoneProducts from '../data/iphoneProducts.json';
-import samsungProducts from '../data/samsungProducts';
-import tecnoProducts from '../data/tecnoProducts';
+import samsungProducts from '../data/samsungProducts.json';
+import tecnoProducts from '../data/tecnoProducts.json';
+import oppoProducts from '../data/oppoProducts.json';
+import redmiProducts from '../data/redmiProducts.json';
+import neonProducts from '../data/neonProducts.json';
+
+import phoneCaseProducts from '../data/phoneCaseProducts.json';
+import screenprotectorsProducts from '../data/screenprotectorsProducts.json';
 
 export default function Home() {
   return (
@@ -51,6 +57,24 @@ export default function Home() {
         products={samsungProducts.slice(0, 5)}
         path="/samsung"
         basePath="/samsung"
+      />
+      <ProductSection
+        title="Oppo Offers"
+        products={oppoProducts.slice(0, 5)}
+        path="/oppo"
+        basePath="/oppo"
+      />
+      <ProductSection
+        title="Redmi Offers"
+        products={redmiProducts.slice(0, 5)}
+        path="/redmi"
+        basePath="/redmi"
+      />
+      <ProductSection
+        title="Neon Offers"
+        products={neonProducts.slice(0, 5)}
+        path="/neon"
+        basePath="/neon"
       />
 
       <ProductSection
@@ -115,6 +139,18 @@ export default function Home() {
         products={tabletProducts.slice(0, 5)}
         path="/tablets"
         basePath="/tablets"
+      />
+      <ProductSection
+        title="Phone Cases Offers"
+        products={phoneCaseProducts.slice(0, 5)}
+        path="/phone-cases"
+        basePath="/phone-cases"
+      />
+      <ProductSection
+        title="Screen Protectors Offers"
+        products={screenprotectorsProducts.slice(0, 5)}
+        path="/screen-protectors"
+        basePath="/screen-protectors"
       />
     </>
   );

@@ -4,13 +4,15 @@ import {
   useRef,
 } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import '../styles/Navbar.css';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] =
     useState(false);
+  const [userEmail, setUserEmail] = useState('');
+  const navigate = useNavigate();
 
   const navbarRef = useRef(null);
 
@@ -48,6 +50,25 @@ export default function Navbar() {
     };
   }, []);
 
+  useEffect(() => {
+    const email = localStorage.getItem('email');
+    if (email) {
+      setUserEmail(email);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
+    localStorage.removeItem('email');
+
+    setUserEmail('');
+    setMenuOpen(false);
+
+    navigate('/');
+    window.location.reload();
+  };
+
   return (
     <header
       className="navbar"
@@ -72,6 +93,21 @@ export default function Navbar() {
               : ''
           }`}
         >
+          {userEmail && (
+            <div className="navbar__mobile-user">
+              <div className="navbar__mobile-email">
+                👤 {userEmail}
+              </div>
+
+              <button
+                className="navbar__logout"
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
+            </div>
+          )}
+
           <Link
             to="/contact"
             className="navbar__link"
@@ -107,6 +143,21 @@ export default function Navbar() {
             Register
           </Link>
         </nav>
+
+        {userEmail && (
+          <div className="navbar__user">
+            <span className="navbar__user-email">
+              👤 {userEmail}
+            </span>
+
+            <button
+              className="navbar__logout"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+          </div>
+        )}
 
         {/* HAMBURGER */}
         <button

@@ -11,15 +11,10 @@ const categories = [
       { label: 'iPhone', path: '/iphone' },
       { label: 'Tecno', path: '/tecno' },
       { label: 'Samsung', path: '/samsung' },
+      { label: 'Oppo', path: '/oppo' },
+      { label: 'Redmi', path: '/redmi' },
+      { label: 'Neon', path: '/neon' },
       { label: 'Infinix', path: '/infinix' },
-    ],
-  },
-  { label: 'Gaming', icon: '🎮', path: '/gaming' },
-  {
-    label: 'Accessories',
-    icon: '',
-    dropdown: [
-      
     ],
   },
   {
@@ -49,21 +44,24 @@ const categories = [
       { label: 'Earphones', path: '/earphones' },
     ],
   },
-
-
   { label: 'Services', icon: '🔧', path: '/services' },
-  { label: 'About',  path: '/about' },
+  { label: 'About', icon: '📋', path: '/about' },
 ];
 
 export default function CategoryBar() {
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [dropdownPos, setDropdownPos] = useState({ top: 0, left: 0 });
   const [mobileMenu, setMobileMenu] = useState(false);
   const catbarRef = useRef(null);
+  const closeTimer = useRef(null);
+  const wrapperRefs = useRef({});
+
+  const isDesktop = () => window.innerWidth > 1024;
 
   /* CLOSE WHEN CLICKING OUTSIDE */
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (catbarRef.current && !catbarRef.current.contains(event.target)) {
+    const handleClickOutside = (e) => {
+      if (catbarRef.current && !catbarRef.current.contains(e.target)) {
         setMobileMenu(false);
         setOpenDropdown(null);
       }
@@ -76,16 +74,35 @@ export default function CategoryBar() {
     };
   }, []);
 
-  const isDesktop = () => window.innerWidth > 1024;
-
-  /* DESKTOP — wrapper hover open */
-  const handleMouseEnter = (label) => {
-    if (isDesktop()) setOpenDropdown(label);
+  const cancelClose = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
   };
 
-  /* DESKTOP — wrapper hover close */
+  const scheduleClose = () => {
+    closeTimer.current = setTimeout(() => setOpenDropdown(null), 150);
+  };
+
+  /* DESKTOP — open with position calculation */
+  const handleMouseEnter = (label) => {
+    if (!isDesktop()) return;
+    cancelClose();
+
+    // Calculate position from the wrapper element
+    const wrapper = wrapperRefs.current[label];
+    if (wrapper) {
+      const rect = wrapper.getBoundingClientRect();
+      setDropdownPos({ top: rect.bottom + 6, left: rect.left });
+    }
+    setOpenDropdown(label);
+  };
+
+  /* DESKTOP — close with delay */
   const handleMouseLeave = () => {
-    if (isDesktop()) setOpenDropdown(null);
+    if (!isDesktop()) return;
+    scheduleClose();
   };
 
   /* MOBILE — click toggle */
@@ -96,8 +113,6 @@ export default function CategoryBar() {
   return (
     <div className="catbar" ref={catbarRef}>
       <div className="catbar__inner">
-
-        {/* LEFT */}
         <div className="catbar__left">
           <span className="catbar__label">Browse:</span>
 
@@ -107,6 +122,7 @@ export default function CategoryBar() {
               <div
                 key={cat.label}
                 className="cat-pill-wrapper"
+                ref={(el) => { if (el) wrapperRefs.current[cat.label] = el; }}
                 onMouseEnter={() => cat.dropdown && handleMouseEnter(cat.label)}
                 onMouseLeave={() => cat.dropdown && handleMouseLeave()}
               >
@@ -122,8 +138,7 @@ export default function CategoryBar() {
                   </NavLink>
                 ) : (
                   <button
-                  className={`cat-pill ${openDropdown === cat.label ? 'cat-pill--active' : ''}`}
-                  onClick={() => toggleDropdown(cat.label)}
+                    className={`cat-pill ${openDropdown === cat.label ? 'cat-pill--active' : ''}`}
                   >
                     <span className="cat-pill__icon">{cat.icon}</span>
                     {cat.label}
@@ -131,24 +146,6 @@ export default function CategoryBar() {
                       ▾
                     </span>
                   </button>
-                )}
-
-                {/* DESKTOP DROPDOWN */}
-                {cat.dropdown && openDropdown === cat.label && (
-                  <div className="cat-dropdown">
-                    {cat.dropdown.map((item) => (
-                      <NavLink
-                        key={item.label}
-                        to={item.path}
-                        className={({ isActive }) =>
-                          `cat-dropdown__item ${isActive ? 'cat-dropdown__item--active' : ''}`
-                        }
-                        onClick={() => setOpenDropdown(null)}
-                      >
-                        {item.label}
-                      </NavLink>
-                    ))}
-                  </div>
                 )}
               </div>
             ))}
@@ -162,12 +159,35 @@ export default function CategoryBar() {
           aria-label="Toggle menu"
         >
           <div className="catbar__hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
           </div>
         </button>
       </div>
+
+      {/* DESKTOP DROPDOWN — rendered at root level, position: fixed */}
+      {openDropdown && categories.find(c => c.label === openDropdown)?.dropdown && (
+        <div
+          className="cat-dropdown"
+          style={{ top: dropdownPos.top, left: dropdownPos.left }}
+          onMouseEnter={cancelClose}
+          onMouseLeave={scheduleClose}
+        >
+          {categories
+            .find(c => c.label === openDropdown)
+            .dropdown.map((item) => (
+              <NavLink
+                key={item.label}
+                to={item.path}
+                className={({ isActive }) =>
+                  `cat-dropdown__item ${isActive ? 'cat-dropdown__item--active' : ''}`
+                }
+                onClick={() => setOpenDropdown(null)}
+              >
+                {item.label}
+              </NavLink>
+            ))}
+        </div>
+      )}
 
       {/* MOBILE MENU */}
       <div className={`catbar__mobile ${mobileMenu ? 'active' : ''}`}>
@@ -179,10 +199,7 @@ export default function CategoryBar() {
                 className={({ isActive }) =>
                   `cat-pill ${isActive ? 'cat-pill--active' : ''}`
                 }
-                onClick={() => {
-                  setMobileMenu(false);
-                  setOpenDropdown(null);
-                }}
+                onClick={() => { setMobileMenu(false); setOpenDropdown(null); }}
               >
                 <span className="cat-pill__icon">{cat.icon}</span>
                 {cat.label}
@@ -200,8 +217,7 @@ export default function CategoryBar() {
                   </span>
                 </button>
 
-                {/* MOBILE DROPDOWN */}
-                {cat.dropdown && openDropdown === cat.label && (
+                {cat.dropdown?.length > 0 && openDropdown === cat.label && (
                   <div className="cat-dropdown cat-dropdown--mobile">
                     {cat.dropdown.map((item) => (
                       <NavLink
@@ -210,10 +226,7 @@ export default function CategoryBar() {
                         className={({ isActive }) =>
                           `cat-dropdown__item ${isActive ? 'cat-dropdown__item--active' : ''}`
                         }
-                        onClick={() => {
-                          setMobileMenu(false);
-                          setOpenDropdown(null);
-                        }}
+                        onClick={() => { setMobileMenu(false); setOpenDropdown(null); }}
                       >
                         {item.label}
                       </NavLink>

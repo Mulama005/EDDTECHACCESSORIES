@@ -6,7 +6,6 @@ import "./Register.css";
 
 const API = "https://eddtechaccessories-backend.vercel.app";
 
-// ── Password rules ──
 const PASSWORD_RULES = [
   { id: "length",  label: "At least 8 characters",        test: (p) => p.length >= 8 },
   { id: "upper",   label: "One uppercase letter (A-Z)",   test: (p) => /[A-Z]/.test(p) },
@@ -20,6 +19,14 @@ export default function Register() {
   const [agreed, setAgreed] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showRules, setShowRules] = useState(false);
+
+  // ── Set Password step (new Google users) ──
+  const [step, setStep] = useState("register"); // "register" | "set-password"
+  const [googleEmail, setGoogleEmail] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmNewPassword, setConfirmNewPassword] = useState("");
+  const [showNewRules, setShowNewRules] = useState(false);
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -27,9 +34,12 @@ export default function Register() {
   };
 
   const passwordStrength = PASSWORD_RULES.filter((r) => r.test(form.password)).length;
-
   const strengthLabel = ["", "Weak", "Weak", "Fair", "Strong", "Very Strong"][passwordStrength];
   const strengthColor = ["", "#ef4444", "#ef4444", "#f59e0b", "#22c55e", "#16a34a"][passwordStrength];
+
+  const newPasswordStrength = PASSWORD_RULES.filter((r) => r.test(newPassword)).length;
+  const newStrengthLabel = ["", "Weak", "Weak", "Fair", "Strong", "Very Strong"][newPasswordStrength];
+  const newStrengthColor = ["", "#ef4444", "#ef4444", "#f59e0b", "#22c55e", "#16a34a"][newPasswordStrength];
 
   // ── Email + Password Register ──
   const handleSubmit = async (e) => {
@@ -39,17 +49,14 @@ export default function Register() {
     if (failedRules.length > 0) {
       return alert(`Password must have: ${failedRules.map((r) => r.label).join(", ")}`);
     }
-
     if (form.password !== form.confirmPassword) {
       return alert("Passwords do not match");
     }
-
     if (!agreed) {
       return alert("You must agree to the Privacy Policy & Terms");
     }
 
     setLoading(true);
-
     try {
       const res = await fetch(`${API}/api/register`, {
         method: "POST",
@@ -60,10 +67,8 @@ export default function Register() {
           agreedToPolicy: true,
         }),
       });
-
       const data = await res.json();
       if (!res.ok) throw new Error(data.error);
-
       alert("Registration successful! Please login.");
       navigate("/login");
     } catch (err) {
@@ -92,11 +97,16 @@ export default function Register() {
       localStorage.setItem("token", data.token);
       localStorage.setItem("role", data.role);
 
-      if (data.role === "admin") {
-        navigate("/admin/orders");
-      } else {
-        navigate("/");
+      // New Google user — show set-password step
+      if (data.is_new_user) {
+        setGoogleEmail(data.email);
+        setStep("set-password");
+        return;
       }
+
+      // Returning Google user — go to home
+      if (data.role === "admin") navigate("/admin/orders");
+      else navigate("/");
     } catch (err) {
       alert(err.message);
     } finally {
@@ -104,18 +114,129 @@ export default function Register() {
     }
   };
 
+  // ── Set Password (new Google users) ──
+  const handleSetPassword = async (e) => {
+    e.preventDefault();
+
+    const failedRules = PASSWORD_RULES.filter((r) => !r.test(newPassword));
+    if (failedRules.length > 0) {
+      return alert(`Password needs: ${failedRules.map((r) => r.label).join(", ")}`);
+    }
+    if (newPassword !== confirmNewPassword) {
+      return alert("Passwords do not match");
+    }
+
+    setLoading(true);
+    try {
+      const res = await fetch(`${API}/api/set-password`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: googleEmail, password: newPassword }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error);
+
+      const role = localStorage.getItem("role");
+      if (role === "admin") navigate("/admin/orders");
+      else navigate("/");
+    } catch (err) {
+      alert(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // ── SET PASSWORD STEP ──
+  if (step === "set-password") {
+    return (
+      <div className="register-page">
+        <div className="register-card">
+          <div style={{ fontSize: 40, textAlign: "center", marginBottom: 12 }}>🔑</div>
+          <h2>Set Your Password</h2>
+          <p style={{ fontSize: 13, color: "#6b7280", textAlign: "center", lineHeight: 1.6, margin: "0 0 24px" }}>
+            Welcome! Set a password for <strong style={{ color: "#111827" }}>{googleEmail}</strong> so you can also log in with email.
+          </p>
+
+          <form className="register-form" onSubmit={handleSetPassword}>
+            <div className="register-password-wrap">
+              <input
+                type="password"
+                placeholder="Create a password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                onFocus={() => setShowNewRules(true)}
+                required
+                autoFocus
+              />
+
+              {newPassword && (
+                <div className="register-strength">
+                  <div className="register-strength__bar">
+                    {[1,2,3,4,5].map((i) => (
+                      <div key={i} className="register-strength__seg"
+                        style={{ background: i <= newPasswordStrength ? newStrengthColor : "#e5e7eb" }}
+                      />
+                    ))}
+                  </div>
+                  <span className="register-strength__label" style={{ color: newStrengthColor }}>
+                    {newStrengthLabel}
+                  </span>
+                </div>
+              )}
+
+              {showNewRules && (
+                <ul className="register-rules">
+                  {PASSWORD_RULES.map((rule) => (
+                    <li key={rule.id} className={`register-rule ${rule.test(newPassword) ? "register-rule--pass" : ""}`}>
+                      <span className="register-rule__icon">{rule.test(newPassword) ? "✓" : "○"}</span>
+                      {rule.label}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            <input
+              type="password"
+              placeholder="Confirm password"
+              value={confirmNewPassword}
+              onChange={(e) => setConfirmNewPassword(e.target.value)}
+              required
+            />
+
+            {confirmNewPassword && (
+              <p className={`register-match ${newPassword === confirmNewPassword ? "register-match--ok" : "register-match--err"}`}>
+                {newPassword === confirmNewPassword ? "✓ Passwords match" : "✗ Passwords do not match"}
+              </p>
+            )}
+
+            <button type="submit" className="register-btn" disabled={loading || newPasswordStrength < 5}>
+              {loading ? "Saving..." : "Set Password & Continue"}
+            </button>
+          </form>
+
+          <p className="register-footer">
+            <span onClick={() => {
+              const role = localStorage.getItem("role");
+              if (role === "admin") navigate("/admin/orders");
+              else navigate("/");
+            }}>
+              Skip for now →
+            </span>
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // ── REGISTER STEP ──
   return (
     <div className="register-page">
       <div className="register-card">
         <h2>Create Account</h2>
 
         {/* GOOGLE BUTTON */}
-        <button
-          className="register-google-btn"
-          onClick={handleGoogle}
-          disabled={loading}
-          type="button"
-        >
+        <button className="register-google-btn" onClick={handleGoogle} disabled={loading} type="button">
           <svg width="18" height="18" viewBox="0 0 48 48">
             <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
             <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
@@ -125,9 +246,7 @@ export default function Register() {
           Continue with Google
         </button>
 
-        <div className="register-divider">
-          <span>or</span>
-        </div>
+        <div className="register-divider"><span>or</span></div>
 
         <form className="register-form" onSubmit={handleSubmit}>
           <input
@@ -151,14 +270,11 @@ export default function Register() {
               required
             />
 
-            {/* STRENGTH BAR */}
             {form.password && (
               <div className="register-strength">
                 <div className="register-strength__bar">
                   {[1, 2, 3, 4, 5].map((i) => (
-                    <div
-                      key={i}
-                      className="register-strength__seg"
+                    <div key={i} className="register-strength__seg"
                       style={{ background: i <= passwordStrength ? strengthColor : "#e5e7eb" }}
                     />
                   ))}
@@ -169,14 +285,10 @@ export default function Register() {
               </div>
             )}
 
-            {/* RULES CHECKLIST */}
             {showRules && (
               <ul className="register-rules">
                 {PASSWORD_RULES.map((rule) => (
-                  <li
-                    key={rule.id}
-                    className={`register-rule ${rule.test(form.password) ? "register-rule--pass" : ""}`}
-                  >
+                  <li key={rule.id} className={`register-rule ${rule.test(form.password) ? "register-rule--pass" : ""}`}>
                     <span className="register-rule__icon">
                       {rule.test(form.password) ? "✓" : "○"}
                     </span>
@@ -196,14 +308,12 @@ export default function Register() {
             required
           />
 
-          {/* MATCH INDICATOR */}
           {form.confirmPassword && (
             <p className={`register-match ${form.password === form.confirmPassword ? "register-match--ok" : "register-match--err"}`}>
               {form.password === form.confirmPassword ? "✓ Passwords match" : "✗ Passwords do not match"}
             </p>
           )}
 
-          {/* CHECKBOX */}
           <label className="register-checkbox">
             <input
               type="checkbox"

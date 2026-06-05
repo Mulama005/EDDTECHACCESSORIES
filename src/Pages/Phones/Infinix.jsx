@@ -8,10 +8,10 @@ export default function Infinix() {
       <div className="infinix-page__header">
         <span className="infinix-page__eyebrow">Infinix Collection</span>
 
-        <h1 className="infinx-page__title">Infinix</h1>
+        <h1 className="infinix-page__title">Infinix Latest Phones</h1>
 
         <p className="infinix-page__subtitle">
-          The full lineup — from the latest to the best value models.
+          The full lineup from the latest to the best value models.
         </p>
       </div>
 
