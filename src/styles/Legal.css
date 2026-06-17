@@ -1,0 +1,262 @@
+/* =========================
+   LEGAL PAGES
+   Privacy Policy & Terms
+========================= */
+.legal-badge {
+  width: fit-content;
+  margin: 0 auto 1rem;
+  padding: 8px 16px;
+  background: #eff6ff;
+  color: #2563eb;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.legal-page {
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    #f8fafc 0%,
+    #f1f5f9 100%
+  );
+  padding: 4rem 1rem;
+}
+
+.legal-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4rem;
+  box-shadow:
+    0 4px 6px rgba(15, 23, 42, 0.03),
+    0 12px 24px rgba(15, 23, 42, 0.05),
+    0 24px 48px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.legal-container h1 {
+  font-size: clamp(2.3rem, 5vw, 3.5rem);
+  font-weight: 800;
+  text-align: center;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  letter-spacing: -1px;
+}
+
+.legal-date {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 3.5rem;
+  line-height: 1.7;
+}
+
+/* =========================
+   CONTENT SECTIONS
+========================= */
+
+.legal-container section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.25s ease;
+}
+
+.legal-container section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+.legal-container h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legal-container h2::before {
+  content: "";
+  width: 6px;
+  height: 24px;
+  background: #2563eb;
+  border-radius: 999px;
+}
+
+.legal-container h3 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.legal-container p {
+  color: #475569;
+  line-height: 1.9;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.legal-container strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+/* =========================
+   LISTS
+========================= */
+
+.legal-container ul {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.legal-container li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.8rem;
+  color: #475569;
+  line-height: 1.8;
+}
+
+.legal-container li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-weight: 700;
+  color: #16a34a;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.legal-container a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.legal-container a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.legal-container section:last-child {
+  background: linear-gradient(
+    135deg,
+    #eff6ff,
+    #f8fafc
+  );
+  border: 1px solid #bfdbfe;
+  border-left: 5px solid #2563eb;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .legal-page {
+    padding: 2rem 0.75rem;
+  }
+
+  .legal-container {
+    padding: 2rem;
+    border-radius: 18px;
+  }
+
+  .legal-container h1 {
+    font-size: 2.3rem;
+  }
+
+  .legal-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .legal-container p,
+  .legal-container li {
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .legal-page {
+    padding: 1rem 0.5rem;
+  }
+
+  .legal-container {
+    padding: 1.5rem;
+    border-radius: 14px;
+  }
+
+  .legal-container h1 {
+    font-size: 1.9rem;
+  }
+
+  .legal-container h2 {
+    font-size: 1.1rem;
+  }
+
+  .legal-container h3 {
+    font-size: 0.95rem;
+  }
+
+  .legal-date {
+    font-size: 0.85rem;
+  }
+
+  .legal-container section {
+    padding: 1.25rem;
+  }
+}

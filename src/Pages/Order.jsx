@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../styles/Pages/Order.css';
 
 export default function Order() {
@@ -138,7 +139,7 @@ export default function Order() {
 
           <label className="order-privacy">
             <input type="checkbox" checked={agreed} onChange={e => setAgreed(e.target.checked)} />
-            <span>I have read and agree to the <a href="#">Privacy Policy</a></span>
+            <span>I have read and agree to the <Link to="/privacy-policy">Privacy Policy</Link></span>
           </label>
 
           <button type="submit" className="order-btn-place" disabled={loading}>

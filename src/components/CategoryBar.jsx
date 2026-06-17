@@ -21,8 +21,8 @@ const categories = [
     label: 'Laptops & Tablets',
     icon: '💻',
     dropdown: [
-      { label: 'Laptop', path: '/laptop' },
-      { label: 'Tablet', path: '/tablet' },
+      { label: 'Laptop', path: '/laptops' },
+      { label: 'Tablet', path: '/tablets' },
     ],
   },
   {
@@ -31,6 +31,7 @@ const categories = [
     dropdown: [
       { label: 'Laptop Chargers', path: '/laptop-chargers' },
       { label: 'Phone Chargers', path: '/phone-chargers' },
+      { label: 'Car Chargers', path: '/car-chargers' },
       { label: 'Powerbank', path: '/powerbank' },
     ],
   },
@@ -42,6 +43,19 @@ const categories = [
       { label: 'Headphones', path: '/headphones' },
       { label: 'Earbuds', path: '/earbuds' },
       { label: 'Earphones', path: '/earphones' },
+    ],
+  },
+  {
+    label: 'Accessories',
+    icon: '🧩',
+    dropdown: [
+      { label: 'Phone Cases', path: '/phone-cases' },
+      { label: 'Screen Protectors', path: '/screen-protectors' },
+      { label: 'Clocks', path: '/clocks' },
+      { label: 'Flashdisks', path: '/flashdisks' },
+      { label: 'Memory Cards', path: '/memorycards' },
+      { label: 'Watches', path: '/watches' },
+      { label: 'Addons', path: '/addons' },
     ],
   },
   { label: 'Services', icon: '🔧', path: '/services' },

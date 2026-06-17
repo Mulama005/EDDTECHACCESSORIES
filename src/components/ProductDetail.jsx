@@ -7,8 +7,6 @@ export default function ProductDetail({ product, relatedProducts, basePath = '/i
   const [selectedStorage, setSelectedStorage] = useState(product.storageOptions?.[0] || null);
   const [selectedColor, setSelectedColor] = useState(product.colorOptions?.[0] || null);
   const [quantity, setQuantity] = useState(1);
-  const [reviewName, setReviewName] = useState('');
-  const [reviewEmail, setReviewEmail] = useState('');
 
   const handleDecrease = () => setQuantity(q => Math.max(1, q - 1));
   const handleIncrease = () => setQuantity(q => q + 1);
@@ -19,12 +17,6 @@ export default function ProductDetail({ product, relatedProducts, basePath = '/i
     window.open(url, '_blank');
   };
 
-  const handleReviewSubmit = (e) => {
-    e.preventDefault();
-    // hook up to backend later
-    setReviewName('');
-    setReviewEmail('');
-  };
   const navigate = useNavigate();
 
   const handleBuyNow = () => {
@@ -126,10 +118,8 @@ export default function ProductDetail({ product, relatedProducts, basePath = '/i
             Quick Order on WhatsApp
           </button>
 
-          {/* Buy Now / Add to Cart */}
           <div className="pd-btn-row">
             <button className="pd-btn-buy" onClick={handleBuyNow}>Buy Now</button>
-            <button className="pd-btn-cart">Add to Cart</button>
           </div>
 
         </div>
@@ -157,34 +147,6 @@ export default function ProductDetail({ product, relatedProducts, basePath = '/i
           </div>
         </div>
       )}
-
-      {/* ── Reviews ── */}
-      <div className="pd-reviews">
-        <h2 className="pd-section-title">Reviews</h2>
-        <div className="pd-stars">
-          {[1,2,3,4,5].map(star => (
-            <span key={star} className={`pd-star ${star <= (product.rating || 4) ? 'pd-star--filled' : ''}`}>★</span>
-          ))}
-          <span className="pd-rating-label">Rating of product</span>
-        </div>
-        <form className="pd-review-form" onSubmit={handleReviewSubmit}>
-          <input
-            type="text"
-            placeholder="Your name"
-            value={reviewName}
-            onChange={e => setReviewName(e.target.value)}
-            required
-          />
-          <input
-            type="email"
-            placeholder="Your email"
-            value={reviewEmail}
-            onChange={e => setReviewEmail(e.target.value)}
-            required
-          />
-          <button type="submit" className="pd-btn-submit">Submit</button>
-        </form>
-      </div>
 
     </div>
   );

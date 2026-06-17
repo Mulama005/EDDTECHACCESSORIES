@@ -11,6 +11,7 @@ import laptopchargersProducts from '../data/laptopchargersProducts';
 import laptopProducts from '../data/laptopProducts';
 
 import phonechargersProducts from '../data/phonechargersProducts.json';
+import carchargersProducts from '../data/carchargersProducts.json';
 import powerbankProducts from '../data/powerbankProducts.json';
 
 import tabletProducts from '../data/tabletProducts.json';
@@ -25,11 +26,17 @@ import neonProducts from '../data/neonProducts.json';
 
 import phoneCaseProducts from '../data/phoneCaseProducts.json';
 import screenprotectorsProducts from '../data/screenprotectorsProducts.json';
+import clocksProducts from '../data/clocksProducts.json';
+import flashdisksProducts from '../data/flashdisksProducts.json';
+import memorycardsProducts from '../data/memorycardsProducts.json';
+import watchProducts from '../data/watchProducts.json';
+import addonsProducts from '../data/addonsProducts.json';
 
 export default function Home() {
   return (
     <>
       <Hero />
+      {/* Smartphones */}
 
       <ProductSection
         title="iPhone Offers"
@@ -76,6 +83,7 @@ export default function Home() {
         path="/neon"
         basePath="/neon"
       />
+      {/* Audio */}
 
       <ProductSection
         title="Headphones Offers"
@@ -98,13 +106,14 @@ export default function Home() {
         basePath="/earbuds"
       />
 
-      {/* ADD THIS SECTION */}
+      
       <ProductSection
         title="Speakers Offers"
         products={speakersProducts.slice(0, 5)}
         path="/speakers"
         basePath="/speakers"
       />
+      {/* Chargers */}
 
       <ProductSection
         title="Laptop Chargers Offers"
@@ -121,11 +130,19 @@ export default function Home() {
       />
 
       <ProductSection
+        title="Car Chargers Offers"
+        products={carchargersProducts.slice(0, 5)}
+        path="/car-chargers"
+        basePath="/car-chargers"
+      />
+
+      <ProductSection
         title="Power Bank Offers"
         products={powerbankProducts.slice(0, 5)}
         path="/powerbanks"
         basePath="/powerbanks"
       />
+      {/* Laptops & Tablets */}
 
       <ProductSection
         title="Laptops Offers"
@@ -140,6 +157,7 @@ export default function Home() {
         path="/tablets"
         basePath="/tablets"
       />
+      {/* Accessories */}
       <ProductSection
         title="Phone Cases Offers"
         products={phoneCaseProducts.slice(0, 5)}
@@ -151,6 +169,36 @@ export default function Home() {
         products={screenprotectorsProducts.slice(0, 5)}
         path="/screen-protectors"
         basePath="/screen-protectors"
+      />
+      <ProductSection
+        title="Clocks Offers"
+        products={clocksProducts.slice(0, 5)}
+        path="/clocks"
+        basePath="/clocks"
+      />
+      <ProductSection
+        title="Addons Offers"
+        products={addonsProducts.slice(0, 5)}
+        path="/addons"
+        basePath="/addons"
+      />
+      <ProductSection
+        title="Flashdisks Offers"
+        products={flashdisksProducts.slice(0, 5)}
+        path="/flashdisks"
+        basePath="/flashdisks"
+      />
+      <ProductSection
+        title="Memory Cards Offers"
+        products={memorycardsProducts.slice(0, 5)}
+        path="/memorycards"
+        basePath="/memorycards"
+      />
+      <ProductSection
+        title="Watches Offers"
+        products={watchProducts.slice(0, 5)}
+        path="/watches"
+        basePath="/watches"
       />
     </>
   );

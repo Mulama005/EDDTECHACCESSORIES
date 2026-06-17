@@ -5,5 +5,11 @@ Allow: /
 Disallow: /admin/
 Disallow: /login
 Disallow: /register
+Disallow: /order-success
+Disallow: /order
+Disallow: /search
+
+# Block API from being indexed
+Disallow: /api/
 
 Sitemap: https://eddtechaccessories.web.app/sitemap.xml

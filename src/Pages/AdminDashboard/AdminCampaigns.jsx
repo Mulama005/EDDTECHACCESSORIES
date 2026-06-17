@@ -115,6 +115,15 @@ export default function AdminCampaigns() {
           >
             💬 Customer Messages
           </button>
+          <button 
+            className="admin-nav-item" 
+            onClick={() => {
+              navigate("/admin/consents");
+              closeSidebar();
+            }}
+          >
+            🍪 Cookie Consents
+          </button> 
 
           <button
             className="admin-nav-item"

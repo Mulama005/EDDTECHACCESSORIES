@@ -56,6 +56,12 @@ export default function Footer() {
               WhatsApp
             </a>
             <Link to="/services">Services</Link>
+            <li>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            </li>
+             <li>
+            <Link to="/terms-use">Terms of Use</Link>
+            </li>
           </div>
 
           {/* ACCOUNT */}

@@ -1,0 +1,307 @@
+/* ─────────────────────────────────────────
+   OVERLAY
+───────────────────────────────────────── */
+.cc-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 24px;
+  pointer-events: none;
+  animation: cc-fade-in 0.4s ease forwards;
+}
+
+.cc-overlay--leaving {
+  animation: cc-fade-out 0.4s ease forwards;
+}
+
+@keyframes cc-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes cc-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* ─────────────────────────────────────────
+   BANNER
+───────────────────────────────────────── */
+.cc-banner {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18), 0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 720px;
+  padding: 28px;
+  pointer-events: all;
+  animation: cc-slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  font-family: "Inter", sans-serif;
+}
+
+.cc-banner--leaving {
+  animation: cc-slide-down 0.35s ease forwards;
+}
+
+@keyframes cc-slide-up {
+  from { transform: translateY(40px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes cc-slide-down {
+  from { transform: translateY(0);    opacity: 1; }
+  to   { transform: translateY(40px); opacity: 0; }
+}
+
+/* ─────────────────────────────────────────
+   TOP ROW
+───────────────────────────────────────── */
+.cc-top {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.cc-icon {
+  font-size: 32px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cc-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px;
+  letter-spacing: -0.3px;
+}
+
+.cc-desc {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.cc-link {
+  color: #111827;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cc-link:hover { color: #374151; }
+
+/* ─────────────────────────────────────────
+   PREFERENCES
+───────────────────────────────────────── */
+.cc-prefs {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  animation: cc-prefs-in 0.25s ease forwards;
+}
+
+@keyframes cc-prefs-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cc-prefs__grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.cc-pref-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #f3f4f6;
+  background: #fafafa;
+  transition: background 0.15s ease;
+}
+
+.cc-pref-item:last-child { border-bottom: none; }
+.cc-pref-item:hover { background: #f3f4f6; }
+.cc-pref-item--locked { opacity: 0.75; }
+
+.cc-pref-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.cc-pref-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.cc-pref-desc {
+  font-size: 12px;
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
+/* ─────────────────────────────────────────
+   TOGGLE
+───────────────────────────────────────── */
+.cc-toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.cc-toggle--on { background: #111827; }
+
+.cc-toggle--locked {
+  background: #d1d5db;
+  cursor: not-allowed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+.cc-toggle--locked span {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.cc-toggle__knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  display: block;
+}
+
+.cc-toggle--on .cc-toggle__knob {
+  transform: translateX(20px);
+}
+
+/* ─────────────────────────────────────────
+   ACTIONS
+───────────────────────────────────────── */
+.cc-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.cc-btn-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cc-btn {
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border: none;
+}
+
+.cc-btn--ghost {
+  background: transparent;
+  color: #9ca3af;
+  border: none;
+  padding: 9px 0;
+  font-size: 12px;
+}
+.cc-btn--ghost:hover { color: #374151; }
+
+.cc-btn--outline {
+  background: transparent;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+.cc-btn--outline:hover { background: #f3f4f6; border-color: #d1d5db; }
+
+.cc-btn--secondary {
+  background: #f3f4f6;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+.cc-btn--secondary:hover { background: #e5e7eb; }
+
+.cc-btn--primary {
+  background: #111827;
+  color: #fff;
+  border: 1px solid #111827;
+}
+.cc-btn--primary:hover {
+  background: #1f2937;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ─────────────────────────────────────────
+   COMPLIANCE BADGE
+───────────────────────────────────────── */
+.cc-compliance {
+  border-top: 1px solid #f3f4f6;
+  padding-top: 12px;
+  text-align: center;
+}
+
+.cc-compliance span {
+  font-size: 11px;
+  color: #d1d5db;
+  letter-spacing: 0.3px;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media (max-width: 600px) {
+  .cc-overlay { padding: 12px; }
+  .cc-banner { padding: 20px 16px; border-radius: 12px; }
+  .cc-top { gap: 12px; }
+  .cc-icon { font-size: 24px; }
+  .cc-title { font-size: 15px; }
+  .cc-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cc-btn-group {
+    flex-direction: column;
+  }
+  .cc-btn { width: 100%; text-align: center; }
+  .cc-btn--ghost { text-align: left; }
+}

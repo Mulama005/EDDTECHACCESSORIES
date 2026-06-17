@@ -4,26 +4,46 @@ import "../styles/About.css";
 export default function About() {
   const team = [
     {
-      name: "Edward Otieno",
-      role: "Founder & Lead Technician",
+      name: "Moureen Wachira",
+      role: "CEO",
       image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop",
-      desc: "Passionate about premium mobile technology, repairs, and delivering trusted tech solutions to every customer."
-    },
-    {
-      name: "Sarah Kimani",
-      role: "Customer Experience Manager",
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop",
+        "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Staff/Moryn.jpeg",
       desc: "Ensures every customer receives professional support, seamless service, and a premium shopping experience."
     },
+
     {
-      name: "Brian Mwangi",
+      name: "Bonventure Mulama",
+      role: " IT Speacilist",
+      image:
+        "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Staff/Mulama.jpeg",
+      desc: "Responsible for building, maintaining, and troubleshooting a website's underlying infrastructure, ensuring it remains secure, highly available, and fully functional for all end users"
+    },
+
+    {
+      name: "George Wanyoike ",
       role: "Senior Accessories Specialist",
       image:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop",
+        "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Staff/George.jpeg",
       desc: "Focused on sourcing high-quality gadgets and accessories that blend innovation, performance, and reliability."
-    }
+    },
+    
+    {
+      name: "John kimani",
+      role: "Founder & Lead Technician",
+      image:
+        "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Staff/kim.jpeg",
+      desc: "Passionate about premium mobile technology, repairs, and delivering trusted tech solutions to every customer."
+    },
+    
+    
+    {
+      name: "William Kelly",
+      role: " Technician",
+      image:
+        "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Staff/William.jpeg",
+      desc: "Committed to elevating the customer experience through premium mobile technology, reliable repairs, and trusted, high-quality tech solutions."
+    },
+    
   ];
 
   return (

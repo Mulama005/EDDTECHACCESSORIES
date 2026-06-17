@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "name": "Y2K Beaded Pastels Phone Charm",
+    "price": "Ksh 800",
+    "tag": "Popular",
+    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Addons/Y2K%20Beaded%20Pastels%20Phone%20Charm.jfif",
+    "inStock": true,
+    "description": "Universal beaded wrist strap featuring custom pastel aesthetics, compatible with all mobile device cases.",
+    "features": ["Handcrafted Acrylic Beads", "High-Tensile Nylon Cord", "Universal Loop Attachment"],
+    "specs": {
+      "type": "Phone Accessory",
+      "category": "Phone Charms",
+      "material": "Acrylic & Nylon",
+      "compatibility": "Universal (All iPhone & Android cases)",
+      "attachmentMethod": "Lanyard Loop"
+    },
+    "warning": "Do not swing the phone excessively by the charm strap to prevent accidental impacts.",
+    "rating": 5,
+    "whatsappNumber": "254758743522"
+  },
+  {
+    "id": 2,
+    "name": "Metallic Star Cross-Body Phone Chain",
+    "price": "Ksh 500",
+    "tag": "Trending",
+    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Addons/Metallic%20Star%20Cross-Body%20Phone%20Chain.jfif",
+    "inStock": true,
+    "description": "Heavy-duty metallic link chain styled with star accents and a universal insert tab that effortlessly slides into any standard phone case.",
+    "features": ["Durable Metal Alloy Links", "Removable Universal Insert Tab", "Comfortable Cross-Body Length"],
+    "specs": {
+      "type": "Phone Accessory",
+      "category": "Phone Charms",
+      "material": "Zinc Alloy / Steel",
+      "compatibility": "Universal (All iPhone & Android cases)",
+      "attachmentMethod": "Under-Case Gasket Tab"
+    },
+    "warning": "Ensure the underlying case is fully snapped onto the phone before using the lanyard weight-bearing load.",
+    "rating": 4,
+    "whatsappNumber": "254758743522"
+  },
+  {
+    "id": 3,
+    "name": "Silicon Octobuddy Suction Mount - Black",
+    "price": "Ksh 500",
+    "tag": "Top Seller",
+    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Addons/Silicon%20Octobuddy%20Suction%20Mount%20-%20Black.jfif",
+    "inStock": true,
+    "description": "Hands-free silicone suction mat featuring a high-strength adhesive backing that securely mounts directly onto any smooth, flat mobile case surface.",
+    "features": ["Multi-Cup Strong Suction Matrix", "Premium 3M Adhesive Layer", "Flexible Silicone Construction"],
+    "specs": {
+      "type": "Content Creator Mount",
+      "category": "Octobuddies",
+      "material": "Grade-A Silicone",
+      "compatibility": "Universal (Fits all flat-surface Android & iPhone cases)",
+      "attachmentMethod": "Adhesive Backing"
+    },
+    "warning": "Test suction security on smooth glass or mirror surfaces before completely letting go of your device.",
+    "rating": 5,
+    "whatsappNumber": "254758743522"
+  },
+  {
+    "id": 4,
+    "name": "Silicon Octobuddy Suction Mount - Pastel Pink",
+    "price": "Ksh 500",
+    "tag": "New",
+    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Addons/Silicon%20Octobuddy%20Suction%20Mount%20-%20Pastel%20Pink.jfif",
+    "inStock": true,
+    "description": "Hands-free pastel pink silicone suction mat tailored for content creators. Perfect for stable mounting on mirrors, windows, and clean gym glass walls.",
+    "features": ["Vibrant Pastel Finish", "Reliable Multi-Surface Suction", "Washable Sticky Surface"],
+    "specs": {
+      "type": "Content Creator Mount",
+      "category": "Octobuddies",
+      "material": "Grade-A Silicone",
+      "compatibility": "Universal (Fits all flat-surface Android & iPhone cases)",
+      "attachmentMethod": "Adhesive Backing"
+    },
+    "warning": "Ensure the target mounting surface is clean, dry, and dust-free to maximize suction hold.",
+    "rating": 5,
+    "whatsappNumber": "254758743522"
+  },
+  {
+    "id": 5,
+    "name": "Diamond Lens Protector",
+    "price": "Ksh 800",
+    "tag": "Top",
+    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Addons/Diamond%20Lens%20Protector.jfif",
+    "inStock": true,
+    "description": "Individual alloy ring tempered glass protectors crafted with diamond-hard finishes for elite scratch resistance.",
+    "features": ["Alloy Reinforced Trim", "9H Hardness Tempered Glass", "Anti-Reflective Coating Layer"],
+    "specs": {
+      "type": "Camera Safeguard",
+      "category": "Lens Protectors",
+      "material": "Tempered Glass & Metal Rim",
+      "compatibility": "Androids and iPhones (Specify exact model)",
+      "display": "Ultra-Clear High Definition"
+    },
+    "warning": "Clean camera housing meticulously with alcohol wipes before installation to eliminate trapped dust bubbles.",
+    "rating": 4,
+    "whatsappNumber": "254758743522"
+  },
+  {
+    "id": 6,
+    "name": "Universal Camera Glass Protector (3-Pack)",
+    "price": "Ksh 700",
+    "tag": "Best Value",
+    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Addons/Universal%20Camera%20Glass%20Protector%20(3-Pack).jfif",
+    "inStock": true,
+    "description": "Ultra-thin, high-definition tempered glass film precision cut to match standard multi-camera arrays on popular mobile builds.",
+    "features": ["Value Triple-Pack Pack", "Oleophobic Anti-Fingerprint Layer", "Seamless Case Compatibility Layout"],
+    "specs": {
+      "type": "Camera Safeguard",
+      "category": "Lens Protectors",
+      "material": "Flexible Tempered Glass Layer",
+      "compatibility": "Universal Android & iPhone Series",
+      "display": "99.9% Light Transmission"
+    },
+    "warning": "Align perfectly with the camera flash cutouts to preserve optimal nighttime photo exposures.",
+    "rating": 4,
+    "whatsappNumber": "254758743522"
+  },
+  {
+    "id": 7,
+    "name": "iPhones Lens Protectors",
+    "price": "Ksh 500",
+    "tag": "Top",
+    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Addons/Lens%20Protector.jfif",
+    "inStock": true,
+    "description": "Premium anti-reflective sapphire glass rings engineered specifically to isolate and preserve original flagship camera profile optics.",
+    "features": ["Synthetic Sapphire Glass Cores", "Sleek Anodized Edge Match", "Zero Flash-Glare Glitch Isolation"],
+    "specs": {
+      "type": "Camera Safeguard",
+      "category": "Lens Protectors",
+      "material": "Sapphire Infused Glass & Titanium Trim",
+      "compatibility": "iPhone 15 Pro & 15 Pro Max",
+      "display": "Professional Photographic Grade"
+    },
+    "warning": "Pressure-press firmly for 15 seconds during installation to solidify the water-resistant adhesive ring bond.",
+    "rating": 5,
+    "whatsappNumber": "254758743522"
+  }
+]

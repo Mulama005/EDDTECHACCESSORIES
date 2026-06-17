@@ -1,11 +1,10 @@
 [
-  
   {
     "id": 1,
     "name": "AMAYA FreeBuds Pro ATW-323",
     "price": "Ksh 1,200",
     "tag": "Top",
-    "image": "https://i.postimg.cc/cC2KVLLv/shopping.webp",
+    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Earbuds/AMAYA%20FreeBuds%20Pro%20ATW-323.webp",
     "inStock": true,
     "description": "Premium wireless earbuds from AMAYA featuring Pure Bass sound technology, Bluetooth 6.0 connectivity, and up to 40 hours of total playtime. Designed for immersive sound quality and long-lasting daily use.",
     "features": [
@@ -24,7 +23,7 @@
     "name": "AMAYA Air Buds ATW-23",
     "price": "Ksh 1,300",
     "tag": "New",
-    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/sign/product_pics/Earbuds/AMAYA%20Air%20Buds%20ATW-23.jfif?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lMzc5NDlhNS0wODNkLTQ5ZGYtYWE3ZC1kODlhZDMwMDViZDMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9kdWN0X3BpY3MvRWFyYnVkcy9BTUFZQSBBaXIgQnVkcyBBVFctMjMuamZpZiIsImlhdCI6MTc3OTYyODI1MSwiZXhwIjoxODQyNzAwMjUxfQ.F870fYDMnPsfPVBc9PbSZ23ytehIfwnKfiWdPnE0Ocs",
+    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Earbuds/AMAYA%20Air%20Buds%20ATW-23.jfif",
     "inStock": true,
     "description": "Stylish and compact wireless earbuds with clear sound quality, Bluetooth 6.0 support, and up to 20 hours of playtime. Ideal for music, calls, and everyday listening.",
     "features": [
@@ -43,7 +42,7 @@
     "name": "AMAYA Earbuds ATW-19",
     "price": "Ksh 1,500",
     "tag": "Budget",
-    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/sign/product_pics/Earbuds/AMAYA%20Earbuds%20ATW-19..jfif?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lMzc5NDlhNS0wODNkLTQ5ZGYtYWE3ZC1kODlhZDMwMDViZDMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9kdWN0X3BpY3MvRWFyYnVkcy9BTUFZQSBFYXJidWRzIEFUVy0xOS4uamZpZiIsImlhdCI6MTc3OTYyODM4NiwiZXhwIjoxODExMTY0Mzg2fQ.QY_9ULjSyRPS2YV7EMoUF86V0GYuGA-4QUHgkfwRDDU",
+    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Earbuds/AMAYA%20Earbuds%20ATW-19..jfif",
     "inStock": true,
     "description": "Affordable AMAYA wireless earbuds with reliable Bluetooth 5.3 connectivity, quality sound output, and 24 hours of battery life. Suitable for casual music listening and calls.",
     "features": [
@@ -62,7 +61,7 @@
     "name": "AMAYA ATW-33",
     "price": "Ksh 1,600",
     "tag": "Popular",
-    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/sign/product_pics/Earbuds/AMAYA%20ATW-33.jfif?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lMzc5NDlhNS0wODNkLTQ5ZGYtYWE3ZC1kODlhZDMwMDViZDMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9kdWN0X3BpY3MvRWFyYnVkcy9BTUFZQSBBVFctMzMuamZpZiIsImlhdCI6MTc3OTYyODY2MCwiZXhwIjoxODExMTY0NjYwfQ.H3gUd2NuylVBVtLP6lj22bbRo3MkvVD_MjyZ_Be-_Ao",
+    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Earbuds/AMAYA%20ATW-33.jfif",
     "inStock": true,
     "description": "Wireless earbuds built for comfort and strong bass performance with Bluetooth 5.4, HD call quality, and up to 40 hours of playback. Great for workouts and everyday entertainment.",
     "features": [
@@ -77,14 +76,12 @@
     "rating": 4,
     "whatsappNumber": "254758743522"
   },
-
- 
   {
     "id": 5,
     "name": "Amaya ATW-37",
     "price": "Ksh 1,800",
     "tag": "Long Battery",
-    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/sign/product_pics/Earbuds/Amaya%20ATW-37.jfif?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lMzc5NDlhNS0wODNkLTQ5ZGYtYWE3ZC1kODlhZDMwMDViZDMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9kdWN0X3BpY3MvRWFyYnVkcy9BbWF5YSBBVFctMzcuamZpZiIsImlhdCI6MTc3OTYyODY4OSwiZXhwIjoxODExMTY0Njg5fQ.pixb5w5mQMb0b72aGYvmfFHpXA0s5FI2ergDCU-zd-E",
+    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Earbuds/Amaya%20ATW-37.jfif",
     "inStock": true,
     "description": "Premium accessories featuring an impressive 70-hour total playtime and an LED display screen for battery monitoring.",
     "features": [
@@ -179,7 +176,7 @@
     "name": "Amaya Wireless Sports TK-04",
     "price": "Ksh 3,000",
     "tag": "Sports",
-    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/sign/product_pics/Earbuds/Amaya%20Wireless%20Sports%20TK-04.jfif?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lMzc5NDlhNS0wODNkLTQ5ZGYtYWE3ZC1kODlhZDMwMDViZDMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9kdWN0X3BpY3MvRWFyYnVkcy9BbWF5YSBXaXJlbGVzcyBTcG9ydHMgVEstMDQuamZpZiIsImlhdCI6MTc3OTYyODg2MywiZXhwIjoxODExMTY0ODYzfQ.6RCCpS1B8oP8kZ66UVgnGBTM-pAgzxhrP6C4rcPnxDQ",
+    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Earbuds/Amaya%20Wireless%20Sports%20TK-04.jfif",
     "inStock": true,
     "description": "Dedicated sports earbuds designed to stay secure during movement with balanced audio for workouts.",
     "features": [
@@ -209,6 +206,44 @@
       "Premium Futuristic Design"
     ],
     "colorOptions": ["Silver/Grey"],
+    "rating": 5,
+    "whatsappNumber": "254758743522"
+  },
+  {
+    "id": 12,
+    "name": "Apple AirPods (3rd Generation)",
+    "price": "Ksh 4,500",
+    "tag": "Premium",
+    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Earbuds/Apple%20AirPods%20(3rd%20Generation).avif",
+    "inStock": true,
+    "description": "Authentic Apple AirPods with Personalized Spatial Audio, adaptive EQ adjustments, and sweat-resistant architecture. Delivers up to 30 hours of high-fidelity auditory performance with the lightning charging case.",
+    "features": [
+      "Personalized Spatial Audio",
+      "Sweat and Water Resistant",
+      "30 Hours Battery Lifecycle",
+      "Adaptive EQ Balancing",
+      "MagSafe Case Compatible"
+    ],
+    "colorOptions": ["White"],
+    "rating": 5,
+    "whatsappNumber": "254758743522"
+  },
+  {
+    "id": 13,
+    "name": "Apple AirPods Pro (2nd Generation)",
+    "price": "Ksh 4,000",
+    "tag": "Pro Choice",
+    "image": "https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Earbuds/Apple%20AirPods%20Pro%20(2nd%20Generation).avif",
+    "inStock": true,
+    "description": "The ultimate listening architecture featuring standard-setting Active Noise Cancellation, Adaptive Audio algorithms, and touch-drag physical volume adjustments directly on the earbud stem.",
+    "features": [
+      "2x Active Noise Cancellation",
+      "Adaptive Transparency Mode",
+      "Precision Case Tracking U1",
+      "Touch Stem Control Layout",
+      "Customizable Silicone Tips"
+    ],
+    "colorOptions": ["White"],
     "rating": 5,
     "whatsappNumber": "254758743522"
   }

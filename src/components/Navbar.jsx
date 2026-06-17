@@ -116,14 +116,7 @@ export default function Navbar() {
             Contact Us
           </Link>
 
-          <a
-            href="#"
-            className="navbar__link navbar__link--wa"
-            onClick={() => setMenuOpen(false)}
-          >
-            <span className="wa-dot" />
-            WhatsApp
-          </a>
+          
 
           <div className="navbar__divider" />
 

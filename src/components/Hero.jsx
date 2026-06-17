@@ -37,7 +37,7 @@ export default function Hero() {
             <div className="hero__glow" aria-hidden="true" />
             <div className="hero__phone-frame">
                 <img
-                src="/images/Phones/iphones/Iphone17Promax.png"
+                src="https://qalskxdcfldadmvedjak.supabase.co/storage/v1/object/public/product_pics/Phones/iphones/Iphone17Promax.png"
                 alt="iPhone 17 Pro Max"
                 className="hero__phone-img"
                 />

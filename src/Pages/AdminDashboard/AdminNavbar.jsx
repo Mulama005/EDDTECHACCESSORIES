@@ -49,6 +49,7 @@ export default function AdminNavbar() {
       </NavLink>
 
       <NavLink to="/admin/campaigns">Campaigns</NavLink>
+      
     </div>
   );
 }
