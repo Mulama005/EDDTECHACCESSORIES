@@ -5,6 +5,7 @@ import {
 } from 'react';
 
 import { Link, useNavigate } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
 import '../styles/Navbar.css';
 
@@ -12,6 +13,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] =
     useState(false);
   const [userEmail, setUserEmail] = useState('');
+  const { cartCount } = useCart();
   const navigate = useNavigate();
 
   const navbarRef = useRef(null);
@@ -116,7 +118,21 @@ export default function Navbar() {
             Contact Us
           </Link>
 
-          
+          <button
+            type="button"
+            className="navbar__cart-btn"
+            onClick={() => {
+              setMenuOpen(false);
+              navigate('/cart');
+            }}
+          >
+            Cart
+            {cartCount > 0 && (
+              <span className="navbar__cart-badge">
+                {cartCount > 99 ? '99+' : cartCount}
+              </span>
+            )}
+          </button>
 
           <div className="navbar__divider" />
 

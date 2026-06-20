@@ -1,15 +1,29 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 import '../styles/ProductDetail.css';
 
 export default function ProductDetail({ product, relatedProducts, basePath = '/iphone'  }) {
   const [selectedStorage, setSelectedStorage] = useState(product.storageOptions?.[0] || null);
   const [selectedColor, setSelectedColor] = useState(product.colorOptions?.[0] || null);
   const [quantity, setQuantity] = useState(1);
+  const [addedMsg, setAddedMsg] = useState('');
+  const { addToCart } = useCart();
 
   const handleDecrease = () => setQuantity(q => Math.max(1, q - 1));
   const handleIncrease = () => setQuantity(q => q + 1);
+
+  const handleAddToCart = () => {
+    addToCart(
+      { ...product, basePath },
+      selectedStorage,
+      selectedColor,
+      quantity
+    );
+    setAddedMsg('Added to cart!');
+    setTimeout(() => setAddedMsg(''), 2500);
+  };
 
   const handleWhatsApp = () => {
     const message = `Hi, I'd like to order:\n*${product.name}*\nStorage: ${selectedStorage}\nColor: ${selectedColor}\nQuantity: ${quantity}\nPrice: ${product.price}`;
@@ -120,7 +134,10 @@ export default function ProductDetail({ product, relatedProducts, basePath = '/i
 
           <div className="pd-btn-row">
             <button className="pd-btn-buy" onClick={handleBuyNow}>Buy Now</button>
+            <button className="pd-btn-cart" onClick={handleAddToCart}>🛒 Add to Cart</button>
           </div>
+
+          {addedMsg && <div className="pd-added-msg">{addedMsg}</div>}
 
         </div>
       </div>

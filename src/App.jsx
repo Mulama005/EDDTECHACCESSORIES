@@ -81,6 +81,8 @@ const EarphonesDetail = lazy(() => import('./Pages/Audio/EarphonesDetail'));
 // Order & Contact
 const Order        = lazy(() => import('./Pages/Order'));
 const OrderSuccess = lazy(() => import('./Pages/OrderSuccess'));
+const Cart         = lazy(() => import('./Pages/Cart'));
+const CartOrder    = lazy(() => import('./Pages/CartOrder'));
 const ContactUs    = lazy(() => import('./Pages/ContactUs/ContactUs'));
 
 // Privacy & Terms
@@ -200,6 +202,8 @@ export default function App() {
               {/* ── Order ── */}
               <Route path="/order"              element={<Order />} />
               <Route path="/order-success"      element={<OrderSuccess />} />
+              <Route path="/cart"               element={<Cart />} />
+              <Route path="/cart-order"         element={<CartOrder />} />
 
               {/* ── Other ── */}
               <Route path="/contact"            element={<ContactUs />} />
